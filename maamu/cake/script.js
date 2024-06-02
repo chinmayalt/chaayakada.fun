@@ -1,4 +1,8 @@
-document.getElementById('blowButton').addEventListener('click', function() {
-    var flame = document.getElementById('flame');
-    flame.style.display = 'none';
+$(document).ready(function() {
+    $(".candles").click(function() {
+      $(".flame").animate({"opacity": 0}, "fast");
+      $(".flame2").animate({"opacity": 0}, "fast");
+      $(".flame3").animate({"opacity": 0}, "fast");
+      $(".text").animate({"top": -90, "opacity": 1}, "fast");
+    });
 });
