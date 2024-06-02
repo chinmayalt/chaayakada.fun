@@ -1,0 +1,31 @@
+html,
+body {
+  height: 100%;
+  color: white;
+}
+body {
+  background-image: url("background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+.infinity-bg {
+  background-image: url(hacked.gif);
+  background-size: cover;
+  background-position: center;
+}
+
+
+.progress::-webkit-progress-value {
+    transition: width 0.5s ease;
+  }
+
+  #progress-text {
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  #result-div, #tryAgain {
+    display: block;
+    margin: 10px auto;
+  }

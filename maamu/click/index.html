@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happyyy Birthday Maaammu!!!</title>
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+    <script src="script.js"></script>    
+</head>
+<body>
+    <header>
+        <h1>Happyyy Birthdayyyy Maaammuuuu!!!! I loouuuuuuu youuuu baabbyy😚😚😚!!!</h1>
+    </header>
+
+    <div class="button-wrapper">
+        <button onclick="redirectTo()" class="hover-button">
+        <img src="../assets/gift.png" alt="Button Image">
+        </button>
+    <span class="hover-text">HAHAHA! Thats right.. theres more</span>
+  </div>
+
+    <div class="notification" id="popup">
+        <div class="close" id='close'>&hearts;</div>
+        <p>I just wanted to remind you howww much you mean to me and how much you have helped mee alll the time! You have alwayss been there for me ... I louuuuuu youu maaammuu!! </p>
+        <p>Oooo oooo i almostt forgott.... my babysss 19 nowww... wooohooooo!!!!</p>
+        <p>Click the heart to close this popup 0_0</p>
+    </div>
+</p>
+    <script>
+        var clicks = 0;
+        document.addEventListener("click", function(event) {
+
+            clicks++;
+            if (clicks / 30 == 1 ) {
+                var popup = document.getElementById("popup");
+                popup.classList.add("show");
+            }
+
+            var x = event.clientX;
+            var y = event.clientY;
+            var img = document.createElement("img");
+            img.classList.add('hello')
+            var images = [
+            "./photos/1.jpg",
+            "./photos/2.jpg",
+            "./photos/3.jpg",
+            "./photos/4.jpg",
+            "./photos/5.jpg",
+            "./photos/6.jpg",
+            "./photos/7.jpg",
+            "./photos/8.jpg",
+            "./photos/9.jpg",
+            "./photos/10.jpg",
+            "./photos/11.jpg",
+            "./photos/12.jpg",
+            "./photos/13.jpg",
+            "./photos/14.jpg",
+            "./photos/15.jpg",
+            "./photos/16.jpg",
+            "./photos/17.jpg",
+            "./photos/18.jpg",
+            "./photos/19.jpg",
+            "./photos/20.jpg",
+            "./photos/21.jpg",
+            "./photos/22.jpg",
+            "./photos/23.jpg",
+            "./photos/24.jpg",
+            "./photos/25.jpg",
+            "./photos/26.jpg",
+            "./photos/27.jpg",
+            "./photos/28.jpg",
+            "./photos/29.jpg",
+            "./photos/30.jpg",
+            "./photos/31.jpg",
+            "./photos/32.jpg",
+            "./photos/33.jpg",
+            "./photos/34.jpg",
+            "./photos/35.jpg",
+            "./photos/36.jpg",
+            "./photos/37.jpg",
+            "./photos/38.jpg",
+            "./photos/39.jpg",
+            "./photos/40.jpg",
+            "./photos/41.jpg",
+            ];
+            var randomIndex = Math.floor(Math.random() * images.length);
+            img.src = images[randomIndex];
+            img.style.left = x + "px";
+            img.style.top = y + "px";
+            document.body.appendChild(img);
+        });
+
+        var closeBtn = document.querySelector(".notification .close");
+        closeBtn.addEventListener("click", function() {
+        var popup = document.getElementById("popup");
+        popup.classList.remove("show");
+        });
+
+        function redirectTo(){
+            window.location.href = "https://kewll.fun/maamu/slide";
+        }
+    </script>
+</body>
+</html>

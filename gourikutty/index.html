@@ -1,0 +1,152 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Happyyy Birthday Gourikutttyyy!!!</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+        <style>
+            img {
+                position: absolute;
+                transform: translate(-50%, -50%);
+                width: 150px; 
+                height: 200px;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #3b3b3b;
+                font-family: 'Nunito', sans-serif;
+            }
+
+            header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                padding: 20px;
+                background-color: rgba(58, 239, 255, 0.8); /* set the background color with alpha value to create transparency */
+                box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* add a box shadow for a subtle effect */
+                z-index: 1; /* make sure the header is on top of other elements */
+            }
+
+            h1 {
+                margin: 0;
+                font-size: 32px;
+                font-weight: bold;
+                color: #333;
+                text-align: center;
+            }
+            .notification {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			padding: 20px;
+			background-color: #31fffc;
+			color: white;
+			font-size: 24px;
+			font-weight: bold;
+            text-align: center;
+			border-radius: 10px;
+			box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+			z-index: 2;
+			visibility: hidden;
+			opacity: 0;
+			transition: visibility 0s, opacity 0.5s ease-in-out;
+		}
+
+		.notification.show {
+			visibility: visible;
+			opacity: 1;
+		}
+        
+        .notification .close {
+			position: absolute;
+			top: 5px;
+			right: 5px;
+			font-size: 20px;
+			font-weight: bold;
+			color: white;
+			cursor: pointer;
+		}
+
+        </style>
+    </head>
+    <body onload="showNotification()">
+        <header>
+            <h1>Happyyy Birthdayyyy Gourikutttyyy!!!! I looveee youuuu!!!</h1>
+        </header>
+        <div class="notification" id="popup">
+            <div class="close" id='close'>&hearts;</div>
+            <p>I just wanted to remind you howww much you mean to me and how much you have helped mee alll the time! You have alwayss been there for me ... I love youu gouriii!!   Click the heart to close this popup 0_0</p>
+        </div>
+
+        <script>
+            var clicks = 0;
+            document.addEventListener("click", function(event) {
+
+                clicks++;
+                // var  message = "I just wanted to remind you howww much you mean to me and how much you have helped mee alll the time! You have alwayss been there for me ... I love youu gouriii!!Also click the heart to close this popup 0_0";
+                if (clicks / 30 == 1 ) {
+                    var popup = document.getElementById("popup");
+                    // popup.innerHTML =  message  ;
+                    popup.classList.add("show");
+                }
+
+                var x = event.clientX;
+                var y = event.clientY;
+                var img = document.createElement("img");
+                var images = [
+                "./photos/1.jpg",
+                "./photos/2.jpg",
+                "./photos/3.jpg",
+                "./photos/4.jpg",
+                "./photos/5.jpg",
+                "./photos/6.jpg",
+                "./photos/7.jpg",
+                "./photos/8.jpg",
+                "./photos/9.jpg",
+                "./photos/10.jpg",
+                "./photos/11.jpg",
+                "./photos/12.jpg",
+                "./photos/13.jpg",
+                "./photos/14.jpg",
+                "./photos/15.jpg",
+                "./photos/16.jpg",
+                "./photos/17.jpg",
+                "./photos/18.jpg",
+                "./photos/19.jpg",
+                "./photos/20.jpg",
+                "./photos/21.jpg",
+                "./photos/22.jpg",
+                "./photos/23.jpg",
+                "./photos/24.jpg",
+                "./photos/25.jpg",
+                "./photos/26.jpg",
+                "./photos/27.jpg",
+                "./photos/28.jpg",
+                "./photos/29.jpg",
+                "./photos/30.jpg",
+                "./photos/31.jpg",
+                ];
+                var randomIndex = Math.floor(Math.random() * images.length);
+                img.src = images[randomIndex];
+                img.style.left = x + "px";
+                img.style.top = y + "px";
+                document.body.appendChild(img);
+            });
+
+            var closeBtn = document.querySelector(".notification .close");
+		    closeBtn.addEventListener("click", function() {
+			var popup = document.getElementById("popup");
+			popup.classList.remove("show");
+		    });
+
+
+            function showNotification(){
+                alert('Keep clicking anywhere on the screen');
+            }
+        </script>
+    </body>
+    </html>
